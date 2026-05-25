@@ -47,7 +47,9 @@ export function ExpertiseSection() {
       <div className="mx-auto max-w-7xl px-6">
         <FadeInView>
           <p className="font-mono text-xs text-cyan">// what_i_do</p>
-          <h2 className="mt-3 text-center font-display text-4xl md:text-5xl font-bold">Areas of Expertise</h2>
+          <h2 className="mt-3 text-center font-display text-4xl md:text-5xl font-bold">
+            Areas of Expertise
+          </h2>
         </FadeInView>
 
         <motion.div
@@ -68,7 +70,10 @@ export function ExpertiseSection() {
               <p className="mt-3 text-sm text-[--text-secondary] leading-relaxed">{desc}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {tags.map((t) => (
-                  <span key={t} className="rounded-full bg-[--bg-tertiary] px-3 py-1 text-xs text-[--text-secondary]">
+                  <span
+                    key={t}
+                    className="rounded-full bg-[--bg-tertiary] px-3 py-1 text-xs text-[--text-secondary]"
+                  >
                     {t}
                   </span>
                 ))}

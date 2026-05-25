@@ -16,9 +16,24 @@ export function Footer() {
         <div>
           <h4 className="font-display text-sm text-[--text-primary] mb-3">Connect</h4>
           <div className="flex gap-3">
-            <a href="mailto:fabrice@mbachanfabrice.com" className="rounded-md border border-[--border-soft] p-2 text-[--text-secondary] hover:text-cyan hover:border-[--border-accent] transition-colors"><Mail className="h-4 w-4" /></a>
-            <a href="https://linkedin.com/in/mbachanfabrice" className="rounded-md border border-[--border-soft] p-2 text-[--text-secondary] hover:text-cyan hover:border-[--border-accent] transition-colors"><Linkedin className="h-4 w-4" /></a>
-            <a href="https://github.com/mbachanfabrice" className="rounded-md border border-[--border-soft] p-2 text-[--text-secondary] hover:text-cyan hover:border-[--border-accent] transition-colors"><Github className="h-4 w-4" /></a>
+            <a
+              href="mailto:fabrice@mbachanfabrice.com"
+              className="rounded-md border border-[--border-soft] p-2 text-[--text-secondary] hover:text-cyan hover:border-[--border-accent] transition-colors"
+            >
+              <Mail className="h-4 w-4" />
+            </a>
+            <a
+              href="https://linkedin.com/in/mbachanfabrice"
+              className="rounded-md border border-[--border-soft] p-2 text-[--text-secondary] hover:text-cyan hover:border-[--border-accent] transition-colors"
+            >
+              <Linkedin className="h-4 w-4" />
+            </a>
+            <a
+              href="https://github.com/mbachanfabrice"
+              className="rounded-md border border-[--border-soft] p-2 text-[--text-secondary] hover:text-cyan hover:border-[--border-accent] transition-colors"
+            >
+              <Github className="h-4 w-4" />
+            </a>
           </div>
         </div>
         <div>

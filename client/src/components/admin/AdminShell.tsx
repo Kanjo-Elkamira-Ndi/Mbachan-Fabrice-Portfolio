@@ -1,4 +1,4 @@
-import { Link, useRouter, useRouterState } from "@tanstack/react-router";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/lib/auth-context";
 import {
   LayoutDashboard,
@@ -24,14 +24,22 @@ const NAV: { to: string; label: string; icon: typeof LayoutDashboard; exact?: bo
   { to: "/admin/messages", label: "Messages", icon: Inbox },
 ];
 
-export function AdminShell({ title, children, action }: { title: string; children: ReactNode; action?: ReactNode }) {
+export function AdminShell({
+  title,
+  children,
+  action,
+}: {
+  title: string;
+  children: ReactNode;
+  action?: ReactNode;
+}) {
   const { isAuthenticated, logout } = useAuth();
-  const router = useRouter();
-  const path = useRouterState({ select: (s) => s.location.pathname });
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    if (!isAuthenticated) router.navigate({ to: "/admin/login" });
-  }, [isAuthenticated, router]);
+    if (!isAuthenticated) navigate("/admin/login");
+  }, [isAuthenticated, navigate]);
 
   if (!isAuthenticated) return null;
 
@@ -44,12 +52,12 @@ export function AdminShell({ title, children, action }: { title: string; childre
         </div>
         <nav className="flex-1 px-3 py-4 space-y-1">
           {NAV.map((n) => {
-            const active = n.exact ? path === n.to : path.startsWith(n.to);
+            const active = n.exact ? pathname === n.to : pathname.startsWith(n.to);
             const Icon = n.icon;
             return (
               <Link
                 key={n.to}
-                to={n.to as "/admin"}
+                to={n.to}
                 className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
                   active
                     ? "bg-[--accent-cyan]/10 text-cyan border border-[--border-accent]"
@@ -63,7 +71,10 @@ export function AdminShell({ title, children, action }: { title: string; childre
           })}
         </nav>
         <button
-          onClick={() => { logout(); router.navigate({ to: "/admin/login" }); }}
+          onClick={() => {
+            logout();
+            navigate("/admin/login");
+          }}
           className="m-3 flex items-center gap-2 rounded-md border border-[--border-soft] px-3 py-2 text-sm text-[--text-secondary] hover:text-[--destructive] hover:border-[--destructive]/40"
         >
           <LogOut className="h-4 w-4" /> Logout

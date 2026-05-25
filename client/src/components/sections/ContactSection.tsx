@@ -28,8 +28,8 @@ export function ContactSection() {
         <FadeInView>
           <h2 className="font-display text-4xl md:text-5xl font-bold">Let's Work Together</h2>
           <p className="mt-6 text-[--text-secondary] leading-relaxed max-w-md">
-            Available for penetration testing engagements, DevSecOps consulting,
-            security architecture reviews, and incident response retainers.
+            Available for penetration testing engagements, DevSecOps consulting, security
+            architecture reviews, and incident response retainers.
           </p>
 
           <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-emerald/30 bg-emerald/5 px-4 py-2">
@@ -38,13 +38,22 @@ export function ContactSection() {
           </div>
 
           <div className="mt-10 space-y-4">
-            <a href="mailto:fabrice@mbachanfabrice.com" className="flex items-center gap-3 text-[--text-secondary] hover:text-cyan transition-colors">
+            <a
+              href="mailto:fabrice@mbachanfabrice.com"
+              className="flex items-center gap-3 text-[--text-secondary] hover:text-cyan transition-colors"
+            >
               <Mail className="h-4 w-4" /> fabrice@mbachanfabrice.com
             </a>
-            <a href="https://linkedin.com/in/mbachanfabrice" className="flex items-center gap-3 text-[--text-secondary] hover:text-cyan transition-colors">
+            <a
+              href="https://linkedin.com/in/mbachanfabrice"
+              className="flex items-center gap-3 text-[--text-secondary] hover:text-cyan transition-colors"
+            >
               <Linkedin className="h-4 w-4" /> linkedin.com/in/mbachanfabrice
             </a>
-            <a href="https://github.com/mbachanfabrice" className="flex items-center gap-3 text-[--text-secondary] hover:text-cyan transition-colors">
+            <a
+              href="https://github.com/mbachanfabrice"
+              className="flex items-center gap-3 text-[--text-secondary] hover:text-cyan transition-colors"
+            >
               <Github className="h-4 w-4" /> github.com/mbachanfabrice
             </a>
           </div>
@@ -82,7 +91,11 @@ export function ContactSection() {
                 onChange={(e) => setForm({ ...form, subject: e.target.value })}
                 className="input"
               >
-                {SUBJECTS.map((s) => <option key={s} value={s}>{s}</option>)}
+                {SUBJECTS.map((s) => (
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
+                ))}
               </select>
             </Field>
             <Field label="Message">
@@ -110,7 +123,9 @@ export function ContactSection() {
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="block">
-      <span className="block font-mono text-xs uppercase tracking-widest text-[--text-muted] mb-2">{label}</span>
+      <span className="block font-mono text-xs uppercase tracking-widest text-[--text-muted] mb-2">
+        {label}
+      </span>
       {children}
       <style>{`
         .input {

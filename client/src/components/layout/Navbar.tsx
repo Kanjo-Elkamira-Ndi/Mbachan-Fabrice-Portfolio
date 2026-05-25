@@ -45,9 +45,14 @@ export function Navbar() {
         }}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-3">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="flex items-center gap-3"
+          >
             <span className="font-display text-2xl font-extrabold text-cyan">MF</span>
-            <span className="hidden sm:inline font-body text-sm text-[--text-secondary]">Mbachan Fabrice</span>
+            <span className="hidden sm:inline font-body text-sm text-[--text-secondary]">
+              Mbachan Fabrice
+            </span>
           </button>
 
           <div className="hidden md:flex items-center gap-1">
@@ -71,7 +76,11 @@ export function Navbar() {
             </button>
           </div>
 
-          <button className="md:hidden text-[--text-primary]" onClick={() => setOpen(true)} aria-label="Open menu">
+          <button
+            className="md:hidden text-[--text-primary]"
+            onClick={() => setOpen(true)}
+            aria-label="Open menu"
+          >
             <Menu className="h-6 w-6" />
           </button>
         </div>

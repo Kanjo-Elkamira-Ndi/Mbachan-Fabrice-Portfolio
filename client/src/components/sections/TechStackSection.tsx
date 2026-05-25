@@ -8,7 +8,9 @@ export function TechStackSection() {
       <div className="mx-auto max-w-7xl px-6">
         <FadeInView>
           <p className="font-mono text-xs text-cyan">// tech_arsenal</p>
-          <h2 className="mt-3 text-center font-display text-4xl md:text-5xl font-bold">Tools of the Trade</h2>
+          <h2 className="mt-3 text-center font-display text-4xl md:text-5xl font-bold">
+            Tools of the Trade
+          </h2>
         </FadeInView>
 
         <div className="mt-16 space-y-10">

@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
@@ -14,11 +13,7 @@ import { CertificationsSection } from "@/components/sections/CertificationsSecti
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
-export const Route = createFileRoute("/")({
-  component: Home,
-});
-
-function Home() {
+export default function Home() {
   return (
     <>
       <TerminalBoot />

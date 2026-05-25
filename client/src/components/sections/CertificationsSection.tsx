@@ -4,7 +4,13 @@ import { Check } from "lucide-react";
 import { certifications } from "@/data/certifications";
 
 function initials(name: string) {
-  return name.replace(/[()]/g, "").split(" ").map((w) => w[0]).slice(0, 3).join("").toUpperCase();
+  return name
+    .replace(/[()]/g, "")
+    .split(" ")
+    .map((w) => w[0])
+    .slice(0, 3)
+    .join("")
+    .toUpperCase();
 }
 
 export function CertificationsSection() {
@@ -13,7 +19,9 @@ export function CertificationsSection() {
       <div className="mx-auto max-w-7xl px-6">
         <FadeInView>
           <p className="font-mono text-xs text-cyan">// credentials</p>
-          <h2 className="mt-3 text-center font-display text-4xl md:text-5xl font-bold">Certifications &amp; Credentials</h2>
+          <h2 className="mt-3 text-center font-display text-4xl md:text-5xl font-bold">
+            Certifications &amp; Credentials
+          </h2>
         </FadeInView>
 
         <motion.div
