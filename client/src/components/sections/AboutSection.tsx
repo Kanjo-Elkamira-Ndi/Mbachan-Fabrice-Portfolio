@@ -1,5 +1,5 @@
 import { FadeInView } from "@/components/animations/FadeInView";
-import portrait from "@/assets/portrait.jpg";
+import portrait from "@/assets/hero.png";
 
 const STATS = [
   ["5+", "Years"],
@@ -52,22 +52,22 @@ export function AboutSection() {
           <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">Defender by Design.</h2>
 
           <p className="mt-6 text-[--text-secondary] leading-relaxed">
-            Mbachan Fabrice is a Cybersecurity Engineer and DevSecOps Specialist with
-            over 5 years of experience securing infrastructure, conducting penetration
-            tests, and building security into the software development lifecycle.
+            Mbachan Fabrice is a Cybersecurity Engineer and DevSecOps Specialist with over 5 years
+            of experience securing infrastructure, conducting penetration tests, and building
+            security into the software development lifecycle.
           </p>
           <p className="mt-4 text-[--text-secondary] leading-relaxed">
-            Passionate about the intersection of offensive and defensive security, he
-            combines deep technical knowledge with a consulting mindset — translating
-            complex vulnerabilities into clear business risk and actionable solutions.
+            Passionate about the intersection of offensive and defensive security, he combines deep
+            technical knowledge with a consulting mindset — translating complex vulnerabilities into
+            clear business risk and actionable solutions.
           </p>
 
           <p className="mt-8 font-mono text-xs uppercase tracking-widest text-[--text-muted]">
             Security Philosophy
           </p>
           <blockquote className="mt-3 border-l-2 border-[--accent-cyan] pl-5 font-display italic text-lg text-[--text-primary]">
-            "Security is not a product, it is a process — and that process must be
-            embedded from the first line of code."
+            "Security is not a product, it is a process — and that process must be embedded from the
+            first line of code."
           </blockquote>
 
           <div className="mt-8 flex flex-wrap gap-2">

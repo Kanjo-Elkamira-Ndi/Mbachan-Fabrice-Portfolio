@@ -22,7 +22,11 @@ export const projects: Project[] = [
       "An e-commerce startup was shipping code with no security scanning in their deployment pipeline, exposing production to unvetted dependencies.",
     outcome:
       "Designed and implemented a full DevSecOps pipeline with SAST, dependency scanning, container image scanning, and secrets detection.",
-    metrics: ["100% pipeline coverage", "Vuln detection shift-left", "3 critical secrets found pre-deploy"],
+    metrics: [
+      "100% pipeline coverage",
+      "Vuln detection shift-left",
+      "3 critical secrets found pre-deploy",
+    ],
     technologies: ["GitHub Actions", "SonarQube", "Trivy", "Semgrep", "Docker"],
   },
   {

@@ -1,28 +1,24 @@
-import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/lib/auth-context";
 import { Shield } from "lucide-react";
 import { toast } from "sonner";
 
-export const Route = createFileRoute("/admin/login")({
-  component: AdminLogin,
-});
-
-function AdminLogin() {
+export default function AdminLogin() {
   const { login, isAuthenticated } = useAuth();
-  const router = useRouter();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    if (isAuthenticated) router.navigate({ to: "/admin" });
-  }, [isAuthenticated, router]);
+    if (isAuthenticated) navigate("/admin");
+  }, [isAuthenticated, navigate]);
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     if (login(email, password)) {
       toast.success("Authenticated.");
-      router.navigate({ to: "/admin" });
+      navigate("/admin");
     } else {
       toast.error("Invalid credentials.");
     }
@@ -40,19 +36,27 @@ function AdminLogin() {
         </p>
         <form onSubmit={submit} className="space-y-4">
           <label className="block">
-            <span className="block font-mono text-xs uppercase tracking-widest text-[--text-muted] mb-2">Email</span>
+            <span className="block font-mono text-xs uppercase tracking-widest text-[--text-muted] mb-2">
+              Email
+            </span>
             <input
-              value={email} onChange={(e) => setEmail(e.target.value)}
-              type="email" autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              autoComplete="email"
               className="w-full bg-[--bg-tertiary] border border-[--border-soft] rounded-md px-3 py-2 text-sm outline-none focus:border-[--accent-cyan]"
               placeholder="admin@mbachanfabrice.com"
             />
           </label>
           <label className="block">
-            <span className="block font-mono text-xs uppercase tracking-widest text-[--text-muted] mb-2">Password</span>
+            <span className="block font-mono text-xs uppercase tracking-widest text-[--text-muted] mb-2">
+              Password
+            </span>
             <input
-              value={password} onChange={(e) => setPassword(e.target.value)}
-              type="password" autoComplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              autoComplete="current-password"
               className="w-full bg-[--bg-tertiary] border border-[--border-soft] rounded-md px-3 py-2 text-sm outline-none focus:border-[--accent-cyan]"
             />
           </label>

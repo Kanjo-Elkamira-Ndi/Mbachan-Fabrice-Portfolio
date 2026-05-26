@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, Sun, Moon } from "lucide-react";
+import { useTheme } from "@/lib/theme-context";
 
 const LINKS = [
   { label: "About", id: "about" },
@@ -13,6 +14,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => {
@@ -39,15 +41,20 @@ export function Navbar() {
       <nav
         className="fixed inset-x-0 top-0 z-50 transition-all"
         style={{
-          background: scrolled ? "rgba(8,12,20,0.9)" : "transparent",
+          background: scrolled ? "var(--navbar-bg)" : "transparent",
           backdropFilter: scrolled ? "blur(12px)" : "none",
-          borderBottom: scrolled ? "1px solid rgba(0,229,255,0.1)" : "1px solid transparent",
+          borderBottom: scrolled ? "1px solid var(--navbar-border)" : "1px solid transparent",
         }}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-3">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="flex items-center gap-3"
+          >
             <span className="font-display text-2xl font-extrabold text-cyan">MF</span>
-            <span className="hidden sm:inline font-body text-sm text-[--text-secondary]">Mbachan Fabrice</span>
+            <span className="hidden sm:inline font-body text-sm text-[--text-secondary]">
+              Mbachan Fabrice
+            </span>
           </button>
 
           <div className="hidden md:flex items-center gap-1">
@@ -65,13 +72,24 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className="rounded-md border border-[--border-soft] p-2 text-[--text-secondary] hover:text-cyan hover:border-[--border-accent] transition-colors"
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+            >
+              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </button>
             <button className="inline-flex items-center gap-2 rounded-md border border-[--border-accent] px-4 py-2 text-sm text-cyan hover:bg-[--accent-cyan]/10 transition-colors">
               <Download className="h-4 w-4" /> Download CV
             </button>
           </div>
 
-          <button className="md:hidden text-[--text-primary]" onClick={() => setOpen(true)} aria-label="Open menu">
+          <button
+            className="md:hidden text-[--text-primary]"
+            onClick={() => setOpen(true)}
+            aria-label="Open menu"
+          >
             <Menu className="h-6 w-6" />
           </button>
         </div>
@@ -95,7 +113,14 @@ export function Navbar() {
                 {l.label}
               </button>
             ))}
-            <button className="mt-4 inline-flex items-center gap-2 rounded-md border border-[--border-accent] px-6 py-3 text-cyan">
+            <button
+              onClick={toggleTheme}
+              className="mt-4 inline-flex items-center gap-2 rounded-md border border-[--border-soft] px-6 py-3 text-[--text-secondary]"
+            >
+              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              {theme === "dark" ? "Light Mode" : "Dark Mode"}
+            </button>
+            <button className="mt-2 inline-flex items-center gap-2 rounded-md border border-[--border-accent] px-6 py-3 text-cyan">
               <Download className="h-4 w-4" /> Download CV
             </button>
           </div>

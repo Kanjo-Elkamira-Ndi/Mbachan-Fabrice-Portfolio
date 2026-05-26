@@ -8,7 +8,9 @@ export function TestimonialsSection() {
     <section className="relative py-32 bg-[--bg-secondary]/30">
       <div className="mx-auto max-w-7xl px-6">
         <FadeInView>
-          <h2 className="text-center font-display text-4xl md:text-5xl font-bold">What People Say</h2>
+          <h2 className="text-center font-display text-4xl md:text-5xl font-bold">
+            What People Say
+          </h2>
         </FadeInView>
       </div>
 
@@ -21,7 +23,10 @@ export function TestimonialsSection() {
             >
               <div
                 className="absolute inset-x-0 top-0 h-px"
-                style={{ background: "linear-gradient(90deg, transparent, var(--accent-cyan), transparent)" }}
+                style={{
+                  background:
+                    "linear-gradient(90deg, transparent, var(--accent-cyan), transparent)",
+                }}
               />
               <Quote className="h-8 w-8 text-cyan/30" />
               <p className="mt-3 italic text-[--text-secondary] leading-relaxed">{t.quote}</p>
